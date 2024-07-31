@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { CategoriesService } from 'src/categories/services/categories.service';
 import { CreateCategoryDto } from '../dtos/categories.dto';
@@ -13,6 +13,15 @@ export class CategoriesController {
     @Get()
     getCategories() {
         return this.categoriesService.findAll();
+    }
+
+    @Get(':categoryId')
+    // @HttpCode(HttpStatus.ACCEPTED)
+    getOne(@Param('categoryId', ParseIntPipe) categoryId: number) {
+    // response.status(200).send({
+    //   message: `product ${categoryId}`,
+    // });
+        return this.categoriesService.findOne(categoryId);
     }
 
     @Post()

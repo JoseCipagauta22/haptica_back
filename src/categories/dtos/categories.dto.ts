@@ -7,6 +7,11 @@ export class CreateCategoryDto {
     @IsNotEmpty()
     @ApiProperty()
     readonly tittle: string;
+
+    @IsString()
+    @IsNotEmpty()
+    @ApiProperty()
+    readonly image: string;
 }
 
 export class UpdateCategoryDto extends PartialType(CreateCategoryDto){}
