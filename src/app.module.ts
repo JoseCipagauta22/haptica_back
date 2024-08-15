@@ -8,6 +8,7 @@ import { AppService } from './app.service';
 import { enviroments } from './enviroments';
 import { CategoriesModule } from './categories/categories.module';
 import { FiguresModule } from './figures/figures.module';
+import { ProofModule } from './proof/proof.module';
 import config from './config';
 
 @Module({
@@ -27,6 +28,7 @@ import config from './config';
     }),
     CategoriesModule,
     FiguresModule,
+    ProofModule,
   ],
   controllers: [AppController],
   providers: [AppService],
