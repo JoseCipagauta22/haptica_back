@@ -8,6 +8,16 @@ export class CreateItemDto {
     @ApiProperty()
     readonly tittle: string;
 
+    @IsString()
+    @IsNotEmpty()
+    @ApiProperty()
+    readonly description: string;
+
+    @IsString()
+    @IsNotEmpty()
+    @ApiProperty()
+    readonly image: string;
+
     @IsNumber()
     @IsPositive()
     @IsNotEmpty()
