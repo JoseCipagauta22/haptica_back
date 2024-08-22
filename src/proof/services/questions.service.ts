@@ -33,4 +33,14 @@ export class QuestionsService {
     }
     return question;
   }
+
+    async getProof() {
+    const question = await this.questionRepository.find({
+      relations: ['answers'],
+    });
+    if (!question) {
+      throw new NotFoundException(`Proof not found`);
+    }
+    return question;
+  }
 }

@@ -18,11 +18,16 @@ export class ProofController {
     return this.answerService.getAnswers();
   }
 
+  @Get('/Proofs')
+  getProofs() {
+    return this.quizService.getProof();
+  }
+
   @Get(':id')
   getProof(@Param('id', ParseIntPipe) id: number) {
     return this.quizService.getQuestionOne(id);
   }
-  
+
   @Get('/question/:id')
   getQuestion(@Param('id', ParseIntPipe) questionId: number) {
     return this.quizService.getQuestion(questionId);
