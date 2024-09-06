@@ -34,13 +34,38 @@ export class QuestionsService {
     return question;
   }
 
-    async getProof() {
-    const question = await this.questionRepository.find({
+  //   async getProof() {
+  //   const question = await this.questionRepository.find({
+  //     relations: ['answers'],
+  //   });
+  //   if (!question) {
+  //     throw new NotFoundException(`Proof not found`);
+  //   }
+  //   return question;
+  // }
+
+  async getProof() {
+    const questions = await this.questionRepository.find({
       relations: ['answers'],
     });
-    if (!question) {
-      throw new NotFoundException(`Proof not found`);
+  
+    function mixArray(array: any[]) {
+      return array.sort(() => Math.random() - 0.5);
     }
-    return question;
+  
+    questions.forEach(question => {
+      if (question.answers) {
+        question.answers = mixArray(question.answers);
+      }
+
+      if (!questions) {
+        throw new NotFoundException(`Proof not found`);
+      }
+
+    });
+  
+    return questions;
   }
+  
+
 }
