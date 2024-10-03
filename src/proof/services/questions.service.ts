@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Question } from '../entities/questions.entity';
 import { Repository } from 'typeorm';
+import { Answers } from '../entities/answers.entity';
 
 @Injectable()
 export class QuestionsService {
@@ -49,7 +50,7 @@ export class QuestionsService {
       relations: ['answers'],
     });
   
-    function mixArray(array: any[]) {
+    function mixArray(array: Answers[]) {
       return array.sort(() => Math.random() - 0.5);
     }
   

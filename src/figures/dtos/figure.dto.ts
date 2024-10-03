@@ -12,6 +12,11 @@ export class CreateFigureDto {
     @IsNotEmpty()
     @ApiProperty()
     readonly state: number;
+
+    @IsNumber()
+    @IsNotEmpty()
+    @ApiProperty()
+    readonly figure: number;
 }
 
 export class UpdateFigureDto extends PartialType(CreateFigureDto){}

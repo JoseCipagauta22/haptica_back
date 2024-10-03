@@ -12,4 +12,7 @@ export class Figure {
 
   @Column({ type: 'integer'})
   state: number;
+
+  @Column({ type: 'integer'})
+  figure: number;
 }
