@@ -13,7 +13,7 @@ const API_KEY_PROD = 'PROD1212121SA';
     TypeOrmModule.forRootAsync({
       inject: [config.KEY],
       useFactory: (configType: ConfigType<typeof config>) => {
-        const { user, host, name, password, port } = configType.dataBase;
+        const { user, host, name, password, port, ssl } = configType.dataBase;
         return {
           type: 'postgres',
           host,
@@ -23,6 +23,21 @@ const API_KEY_PROD = 'PROD1212121SA';
           database: name,
           synchronize: true,
           autoLoadEntities: true,
+          ssl: true,
+          extra: {
+            ssl: {
+              rejectUnauthorized: false
+            }
+          }
+          // ssl: ssl,
+          // extra: {
+          //   ssl: 
+              // ssl === 'true'
+              //   ? {
+              //     rejectUnauthorized: false
+              //   }
+              //   : null
+          // }
         };
       },
     }),
