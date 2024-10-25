@@ -23,7 +23,7 @@ const API_KEY_PROD = 'PROD1212121SA';
           username: user,
           password,
           database: name,
-          synchronize: true,
+          // synchronize: true,
           autoLoadEntities: true,
           ssl: {
             rejectUnauthorized: false},
