@@ -25,7 +25,8 @@ const API_KEY_PROD = 'PROD1212121SA';
           database: name,
           synchronize: true,
           autoLoadEntities: true,
-          ssl: true,
+          ssl: {
+            rejectUnauthorized: false},
           // ssl: ssl.valueOf(),
           // extra: {
             // ssl: ssl
