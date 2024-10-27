@@ -15,7 +15,7 @@ const API_KEY_PROD = 'PROD1212121SA';
       
       useFactory: (configType: ConfigType<typeof config>) => {
         const { user, host, name, password, port, ssl } = configType.dataBase;
-        console.log(typeof ssl, ssl.valueOf());
+        console.log(typeof ssl, ssl);
         return {
           type: 'postgres',
           host,
@@ -25,9 +25,17 @@ const API_KEY_PROD = 'PROD1212121SA';
           database: name,
           synchronize: true,
           autoLoadEntities: true,
-          ssl: {
-            rejectUnauthorized: false
-          },
+          ssl: ssl === 'true',
+          extra: {
+            ssl:ssl === 'true'
+              ? {
+                  rejectUnauthorized: false,
+                }
+              : null,
+          }
+          // {
+          //   rejectUnauthorized: false
+          // },
           // ssl: ssl.valueOf(),
           // extra: {
             // ssl: ssl
