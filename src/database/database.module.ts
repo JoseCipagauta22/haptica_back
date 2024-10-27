@@ -4,9 +4,6 @@ import { ConfigType } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import config from '../config';
 
-import * as fs from 'fs';
-import * as path from 'path';
-
 const API_KEY = '12345634';
 const API_KEY_PROD = 'PROD1212121SA';
 
@@ -28,20 +25,14 @@ const API_KEY_PROD = 'PROD1212121SA';
           database: name,
           synchronize: true,
           autoLoadEntities: true,
-          // ssl: {
-          //   ca: fs.readFileSync(path.join(__dirname, './../../src/solicitud.csr')),
-          //   key: fs.readFileSync(path.join(__dirname, './../../src/clave_privada.key')),
-          //   cert: fs.readFileSync(path.join(__dirname, './../../src/certificado.crt')),
-          //   rejectUnauthorized: false, // Cambia a false solo si es necesario
-          // }
-          // ssl: ssl === 'true',
-          // extra: {
-          //   ssl:ssl === 'true'
-          //     ? {
-          //         rejectUnauthorized: false,
-          //       }
-          //     : null,
-          // }
+          ssl: ssl === 'true',
+          extra: {
+            ssl:ssl === 'true'
+              ? {
+                  rejectUnauthorized: false,
+                }
+              : null,
+          }
           // {
           //   rejectUnauthorized: false
           // },
