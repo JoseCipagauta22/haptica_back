@@ -9,6 +9,10 @@ services:
       - '5432:5432'
     volumes:
       - ./postgres_data:/var/lib/postgresql/data
+    #   - ./certs:/certs
+    #   - ./postgresql.conf:/etc/postgresql/postgresql.conf
+    #   - ./pg_hba.conf:/etc/postgresql/pg_hba.conf
+    # command: ["postgres", "-c", "config_file=/etc/postgresql/postgresql.conf"]
 
   pgadmin:
     image: dpage/pgadmin4

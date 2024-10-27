@@ -41,20 +41,20 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('docs', app, document);
 
-  const server = https.createServer(httpsOptions, app.getHttpAdapter().getInstance());
+  // const server = https.createServer(httpsOptions, app.getHttpAdapter().getInstance());
 
-  // Iniciar el servidor en el puerto 443
+  // // Iniciar el servidor en el puerto 443
   
-  server.listen(process.env.PORT || 3000, () => {
-    console.log('Servidor HTTPS escuchando en el puerto');
-  });
+  // server.listen(process.env.PORT || 3000, () => {
+  //   console.log('Servidor HTTPS escuchando en el puerto');
+  // });
 
-  // Manejo de errores
-  server.on('error', (error) => {
-    console.error('Error en el servidor:', error);
-  });
+  // // Manejo de errores
+  // server.on('error', (error) => {
+  //   console.error('Error en el servidor:', error);
+  // });
 
 
-  // await app.listen(process.env.PORT || 3000, httpsOptions);
+  await app.listen(process.env.PORT || 3000);
 }
 bootstrap();

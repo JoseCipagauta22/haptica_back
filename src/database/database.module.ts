@@ -25,14 +25,14 @@ const API_KEY_PROD = 'PROD1212121SA';
           database: name,
           synchronize: true,
           autoLoadEntities: true,
-          ssl: ssl === 'true',
-          extra: {
-            ssl:ssl === 'true'
-              ? {
-                  rejectUnauthorized: true,
-                }
-              : null,
-          }
+          ssl: false,
+          // extra: {
+          //   ssl:true
+          //     ? {
+          //         rejectUnauthorized: true,
+          //       }
+          //     : null,
+          // }
           // {
           //   rejectUnauthorized: false
           // },
