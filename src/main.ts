@@ -5,8 +5,8 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import * as fs from 'fs';
-import * as https from 'https';
 import * as path from 'path';
+import * as https from 'https';
 // import path from 'path';
 
 async function bootstrap() {
