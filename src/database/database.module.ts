@@ -23,9 +23,10 @@ const API_KEY_PROD = 'PROD1212121SA';
           username: user,
           password,
           database: name,
-          synchronize: true,
+          synchronize: false,
           autoLoadEntities: true,
-          ssl: false,
+          // url: 'postgres://user:123456@host:3000/database?ssl=true',
+          // ssl: false,
           // extra: {
           //   ssl:true
           //     ? {
@@ -40,15 +41,15 @@ const API_KEY_PROD = 'PROD1212121SA';
           // extra: {
             // ssl: ssl
           // }
-          // ssl: ssl,
-          // extra: {
-          //   ssl: 
-              // ssl === 'true'
-              //   ? {
-              //     rejectUnauthorized: false
-              //   }
-              //   : null
-          // }
+          ssl: ssl === 'true',
+          extra: {
+            ssl: 
+              ssl === 'true'
+                ? {
+                    rejectUnauthorized: false
+                  }
+                : null
+          }
         };
       },
     }),
