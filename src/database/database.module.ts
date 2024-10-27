@@ -29,7 +29,7 @@ const API_KEY_PROD = 'PROD1212121SA';
           extra: {
             ssl:ssl === 'true'
               ? {
-                  rejectUnauthorized: false,
+                  rejectUnauthorized: true,
                 }
               : null,
           }
