@@ -3,6 +3,7 @@ import { Client } from 'pg';
 import { ConfigType } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import config from '../config';
+import { Category } from 'src/categories/entities/category.entity';
 
 const API_KEY = '12345634';
 const API_KEY_PROD = 'PROD1212121SA';
@@ -49,7 +50,9 @@ const API_KEY_PROD = 'PROD1212121SA';
                     rejectUnauthorized: false
                   }
                 : null
-          }
+          },
+
+          entities: [Category]
         };
       },
     }),
