@@ -25,7 +25,7 @@ const API_KEY_PROD = 'PROD1212121SA';
           username: user,
           password,
           database: name,
-          synchronize: false,
+          // synchronize: false,
           autoLoadEntities: true,
           // url: 'postgres://user:123456@host:3000/database?ssl=true',
           // ssl: false,
