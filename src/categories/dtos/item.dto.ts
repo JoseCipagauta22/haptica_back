@@ -19,6 +19,16 @@ export class CreateItemDto {
     readonly image: string;
 
     @IsNumber()
+    @IsNotEmpty()
+    @ApiProperty()
+    readonly state: number;
+
+    @IsNumber()
+    @IsNotEmpty()
+    @ApiProperty()
+    readonly figure: number;
+
+    @IsNumber()
     @IsPositive()
     @IsNotEmpty()
     @ApiProperty()

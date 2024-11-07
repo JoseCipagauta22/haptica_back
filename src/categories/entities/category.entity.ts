@@ -13,6 +13,9 @@ export class Category {
   @Column({ type: 'varchar'})
   image: string;
 
+  @Column({ type: 'varchar', length: 2000 })
+  description: string;
+
   @OneToMany(()=> Item, (item)=> item.category)
   items: Item[];
 }

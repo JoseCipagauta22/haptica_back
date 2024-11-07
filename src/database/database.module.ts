@@ -52,8 +52,6 @@ const API_KEY_PROD = 'PROD1212121SA';
                   }
                 : null
           },
-
-          entities: [Category, Item]
         };
       },
     }),

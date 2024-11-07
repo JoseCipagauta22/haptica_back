@@ -16,6 +16,12 @@ export class Item {
     @Column({ type: 'varchar', length: 255 })
     image;
 
+    @Column({ type: 'integer'})
+    state: number;
+
+    @Column({ type: 'integer' })
+    figure: number;
+
     @ManyToOne(()=> Category, (category)=> category.items)
     category: Category;
 }
